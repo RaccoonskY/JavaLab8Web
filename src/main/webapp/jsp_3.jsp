@@ -1,4 +1,4 @@
-
+<%@ page import="jspappl.Individual" %>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%-- Объявление библиотек тэгов JSF --%>
@@ -20,10 +20,11 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     <title>Лаб. 8</title>
 </head>
 <body>
+<jsp:useBean id="individual" scope="session" class="jspappl.Individual" />
 <h1>Финишная страница</h1>
 <h1>Яблонскас В.С. 4311</h1>
 <table id="results">
-    <%mybean.addCounter(1);%>
+    <%=Individual.getResultsToWeb(Individual.getSortedArray(request.getParameter("values").split(" ")))%>
 </table>
 <a href="jsp_2.jsp">Главная страница</a>
 </body>

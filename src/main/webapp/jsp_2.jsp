@@ -1,4 +1,4 @@
-
+<%@ page import="jspappl.Individual" %>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%-- Объявление библиотек тэгов JSF --%>
@@ -21,12 +21,15 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <jsp:useBean id="individual" scope="session" class="jspappl.Individual" />
 <h1>Главная страница </h1>
 <h3>Введите данные для сортировки через пробел</h3>
-<form name="Input form" action="jsp_2.jsp">
-    <input type="text" name="values"/>
-    <input type="submit" value="OK" name="button1" />
+<form name="Input form" action="jsp_3.jsp">
+    <label>
+        <input type="text" name="values"/>
+    </label>
+    <input type="submit" value="Получить данные" name="button1"/>
     <%mybean.addCounter(1);%>
     <h1>${mybean.counter}</h1>
 </form>
-<a href="jsp_3.jsp?values=${123}">Получить данные</a>
+<a href="jsp_3.jsp?values=1+2+3+4+5">Финальная страница</a>
+<a href="jsp_1.jsp">Начальная страница</a>
 </body>
 </html>
